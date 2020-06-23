@@ -7,9 +7,6 @@ wifi = pywifi.PyWiFi()
 iface = wifi.interfaces()[0]
 iface.scan()
 
-# for wifi in iface.scan_results():
-#     print(wifi.ssid)
-
 def connect_wifi(name, password):
     iface.disconnect()
     time.sleep(0.5)
@@ -49,4 +46,3 @@ while not found:
             print(f"Password for {wifi_name} found in {end - start} seconds: {validation}")
 
     i += 1
-
