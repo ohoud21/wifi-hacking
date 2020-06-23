@@ -39,10 +39,13 @@ start = time.time()
 
 while not found:
     pass_iter = itertools.product(letters, repeat=8)
-    for password in pass_iter:
+    
+    for password in pass_iter:        
         validation = connect_wifi(wifi_name, password)
+        
         if validation is not None:
             end = time.time()
             print(f"Password for {wifi_name} found in {end - start} seconds: {validation}")
+            found = True
 
     i += 1
