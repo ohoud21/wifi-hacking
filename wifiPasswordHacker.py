@@ -9,9 +9,6 @@ wifi = pywifi.PyWiFi()
 iface = wifi.interfaces()[0]
 iface.scan()
 
-# for wifi in iface.scan_results():
-#     print(wifi.ssid)
-
 # main function attempting connection
 def connect_wifi(name, password):
     # disconnect current wifi if any
@@ -44,7 +41,7 @@ def connect_wifi(name, password):
             return None
 
 ''' 
-1.    the first variable is the basic key set for wifi passwords
+1.    the first key set(first variable below) is the basic key set for wifi passwords
 2.    if you do not get password using the first key set try using the second one
 3.    if you still do not get the password check the "akm", "auth", and "cipher" of the the network,
       replace the constants and try again
